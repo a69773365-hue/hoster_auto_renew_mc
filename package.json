@@ -1,0 +1,13 @@
+{
+  "name": "hoster24-keepalive",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Keepalive bot for a Hoster24 MC server: log in periodically so the 12h no-player auto-stop never triggers",
+  "main": "src/keepalive.js",
+  "scripts": {
+    "start": "node src/keepalive.js",
+    "once": "node src/keepalive.js --once"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": { "minecraft-protocol": "^1.68.0" }
+}

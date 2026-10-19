@@ -1,0 +1,19 @@
+services:
+  keepalive:
+    build: .
+    container_name: hoster24-keepalive
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      MC_HOST: ${MC_HOST:-server.hoster24.org}
+      MC_PORT: ${MC_PORT:-24990}
+      MC_USER: ${MC_USER:-qx47_kp9z2}
+      MC_VERSION: ${MC_VERSION:-1.21.11}
+      STAY_MIN: ${STAY_MIN:-20}
+      INTERVAL_H: ${INTERVAL_H:-4}
+      RETRY_MIN: ${RETRY_MIN:-10}
+    logging:
+      driver: json-file
+      options: { max-size: "1m", max-file: "3" }
